@@ -1,0 +1,26 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.error-description {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.home-link {
+    margin-top: 20px;
+}

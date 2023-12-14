@@ -1,0 +1,44 @@
+<section class="Singup-wrap mtb-40">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-box">
+                    <h1>USER REGISTRATION</h1>
+                    <div class="alert" [ngClass]="{'alert-success': message.includes('Successfully'), 'alert-danger': !message.includes('Successfully')}" *ngIf="datasaved">
+                        <strong> {{message.toUpperCase()}}</strong>
+                    </div>
+                    <form (ngSubmit)="onSubmit()" [formGroup]="regForm">
+
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Name : <span class="required">*</span></label>
+                            <div class="col-md-9 s">
+                                <input type="text" formControlName="Name" class="form-control" placeholder="Name" required="">
+                                <span *ngIf="!regForm.get('Name')?.valid && regForm.get('Name')?.touched">Please enter Your Name !!!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Email ID <span class="required">*</span></label>
+                            <div class="col-md-9 s">
+                                <input type="text" formControlName="Email" class="form-control" placeholder="Email Id" required="">
+                                <span *ngIf="!regForm.get('Email')?.valid && regForm.get('Email')?.touched">Please enter Email !!!</span>
+                            </div>
+                        </div>
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Password <span class="required">*</span></label>
+                            <div class="col-md-9 s">
+                                <input type="password" formControlName="Password" class="form-control" placeholder="Password" required="">
+                                <span *ngIf="!regForm.get('Password')?.valid && regForm.get('Password')?.touched">Please enter Password !!!</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group ">
+                            <button type="submit" [disabled]="!regForm.valid" class="btn btn-primary s">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
