@@ -1,0 +1,19 @@
+name: Jekyll Build Pages
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Build and Deploy Jekyll Pages
+      uses: actions/jekyll-build-pages@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
